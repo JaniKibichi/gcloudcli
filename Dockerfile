@@ -23,9 +23,12 @@ RUN tar -xvf google-cloud-sdk-332.0.0-linux-x86_64.tar.gz && rm google-cloud-sdk
 #Run installation script
 RUN ./google-cloud-sdk/install.sh
 
+#Attempt to Add Source Path
+RUN source ./google-cloud-sdk/completion.bash.inc && source ./google-cloud-sdk/path.bash.inc
+
 #Run Updates and Patches
-RUN ./google-cloud-sdk/bin/gcloud components update
+RUN gcloud components update
 
 #Install GCloud App Engine SDK for Java
-RUN ./google-cloud-sdk/bin/gcloud components install app-engine-java && ./google-cloud-sdk/bin/gcloud components install kubectl
+RUN gcloud components install app-engine-java && gcloud components install kubectl
 
