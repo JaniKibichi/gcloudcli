@@ -24,7 +24,7 @@ RUN tar -xvf google-cloud-sdk-332.0.0-linux-x86_64.tar.gz && rm google-cloud-sdk
 RUN ./google-cloud-sdk/install.sh
 
 #Attempt to Add Source Path
-RUN source ./google-cloud-sdk/completion.bash.inc && source ./google-cloud-sdk/path.bash.inc
+RUN source [/GCloudCli/google-cloud-sdk/completion.bash.inc]  && source [/GCloudCli/google-cloud-sdk/path.bash.inc]
 
 #Run Updates and Patches
 RUN gcloud components update
