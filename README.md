@@ -7,17 +7,17 @@
 - Build the image:
 
 ```
-$ docker build -t gcloud-cli .
+$ docker build -t googlecloud-cli .
 ```
 
 - Run:
 
 ```
-$ docker run --name gcloud gcloud-cli
+$ docker run --name googlecloud googlecloud-cli
 ```
 
 - SSH into the Container:
 
 ```
-$ docker exec -it gcloud /bin/bash
+$ docker exec -it googlecloud /bin/bash
 ```
