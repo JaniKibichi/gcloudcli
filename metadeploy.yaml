@@ -1,0 +1,5 @@
+- name: metabaseclient
+  image: gcr.io/kaskazimetabase/metabase:v1
+  ports:
+    - containerPort: 3000 #set env variables used for Postgres Connection
+ 
