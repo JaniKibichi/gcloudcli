@@ -10,20 +10,16 @@
 $ docker build -t gcloud-cli .
 ```
 
-- Run:
+- Run Container & SSH into the Container:
 
 ```
-$ docker run --name gcloud gcloud-cli
-```
-
-- SSH into the Container:
-
-```
-$ docker exec -it gcloud /bin/bash
+$ docker run --name gcloud --rm -it gcloud-cli:latest
 ```
 
 - Authenticate to Google Cloud By obtaining new credentials.:
 
 ```
+$ source google-cloud-sdk/path.bash.inc
+$ source google-cloud-sdk/completion.bash.inc
 $ gcloud auth login
 ```
