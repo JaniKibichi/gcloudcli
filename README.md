@@ -10,8 +10,14 @@
 $ docker build -t gcloud-cli .
 ```
 
-- Run and SSH into the Container:
+- Run:
 
 ```
-$ docker exec -it gcloud-cli /bin/bash
+$ docker run --name gcloud gcloud-cli
+```
+
+- SSH into the Container:
+
+```
+$ docker exec -it gcloud /bin/bash
 ```
