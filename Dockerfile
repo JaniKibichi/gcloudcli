@@ -15,20 +15,17 @@ COPY . /GCloudCli
 RUN sudo yum install -y postgresql-server postgresql-contrib
 
 #Update the Yum Repo to have the CLI
-RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-332.0.0-linux-x86_64.tar.gz
+RUN wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-241.0.0-linux-x86_64.tar.gz
 
 #Download Google Cloud SDK and untar for Java
-RUN tar -xvf google-cloud-sdk-332.0.0-linux-x86_64.tar.gz && rm google-cloud-sdk-332.0.0-linux-x86_64.tar.gz
+RUN tar -xvf google-cloud-sdk-241.0.0-linux-x86_64.tar.gz && rm google-cloud-sdk-241.0.0-linux-x86_64.tar.gz
 
 #Run installation script
 RUN ./google-cloud-sdk/install.sh
 
-#Attempt to Add Source Path
-RUN source /GCloudCli/google-cloud-sdk/completion.bash.inc && source /GCloudCli/google-cloud-sdk/path.bash.inc
-
 #Run Updates and Patches
-RUN gcloud components update
+RUN ./google-cloud-sdk/bin/gcloud components 
 
 #Install GCloud App Engine SDK for Java
-RUN gcloud components install app-engine-java && gcloud components install kubectl
+RUN ./google-cloud-sdk/bin/gcloud components install app-engine-java && ./google-cloud-sdk/bin/gcloud components install kubectl
 
