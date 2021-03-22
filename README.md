@@ -21,3 +21,9 @@ $ docker run --name googlecloud googlecloud-cli
 ```
 $ docker exec -it googlecloud /bin/bash
 ```
+
+- Authenticate to Google Cloud By obtaining new credentials.:
+
+```
+$ gcloud auth login
+```
